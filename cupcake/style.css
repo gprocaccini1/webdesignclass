@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+h1 {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 15vw;
+  color: white;
+  text-shadow: 3px 3px 3px black;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+    background-color: pink;   
+}
+
+#headline {
+    width: 80%;
+    margin: 50px auto;
+    position: relative;
+}
+
+.cupcake1 { background-position: center;
+width: 100px;
+height: 100px;
+background-image: url(images/cupcake1.png);
+background-repeat: no-repeat;
+background-size: cover;
+position: absolute;
+top: 100px;
+left: 0;
+animation: rotate 3s 0s infinite alternate-reverse;
+}
+
+.cupcake2 { background-position: center;
+width: 150px;
+height: 150px;
+background-image: url(images/cupcake2.png);
+background-repeat: no-repeat;
+background-size: cover;
+position: absolute;
+top: 150px;
+animation: rotate 8s 2s infinite alternate;
+right: 0;
+}
+
+@keyframes rotate {
+    0% {rotate: 0deg;}
+    100% {rotate: 360deg;}
+}
+
+#content {
+    width: 80%;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.column {
+    width: 50%;
+}
+
+h2 {
+    font-size: 28px;
+    margin-right: 50px;
+    line-height: 1.3;
+}
+
+p {
+    font-size: 20px;
+}
+
+#bottom {
+    width: 80%;
+    margin: 50px auto;
+    display: none;
+}
+
+#bottom img {
+    width: 100%;
+    height: auto;
+}
+
+@media screen and (max-width: 950px) {
+    body {
+        background-color: rgb(249, 249, 134);
+    }
+}
+
+@media screen and (max-width: 650px) {
+    #content { 
+        flex-direction: column;
+    }
+    #bottom {
+        display: block;
+    }
+    .column {
+        width: 100%;
+    }
+    h2 {
+        margin-bottom: 50px;
+    }
+    .cupcake2 {
+        top: 50px;
+        width: 75px;
+        height: 75px;
+        background-image: url(images/cupcake2-eaten.png);
+    }
+    body {
+        background-color: lightgreen;
+    }
+    .cupcake1 {
+        background-image: url(images/cupcake1-eaten.png);
+    }
+}
