@@ -1,0 +1,216 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.instructions {
+    position: fixed;
+    top: 20px;
+    background-color: rgb(230, 230, 101);
+    text-align: center;
+    color: rgb(59, 59, 59);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+
+.fonted {
+  font-family: "Henny Penny", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.invert {
+    filter: invert(100%);
+}
+
+.hibob {
+    color: rgb(170, 43, 138);
+    font-size: 30px;
+    position: relative;
+    bottom: 100px;
+    display: none;
+    background-color: rgb(99, 186, 189);
+    padding: 10px 5px 0px 5px;
+}
+
+.bobsays {
+    display: none;
+    color: rgb(170, 43, 138);
+    font-size: 30px;
+    position: relative;
+    bottom: 100px;
+    background-color: rgb(99, 186, 189);
+    padding: 10px 5px 0px 5px;
+}
+
+.car {
+    display: none;
+    color: rgb(170, 43, 138);
+    font-size: 30px;
+    position: relative;
+    bottom: 100px;
+    background-color: rgb(99, 186, 189);
+    padding: 10px 5px 0px 5px;
+}
+
+.hi {
+    display: none;
+    z-index: 20;
+    color: rgb(170, 43, 138);
+}
+
+.circle {
+    display: hide;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    padding: 15px; 
+    background-color: white;
+}
+
+h4 {
+    font-size: 22px;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg {
+    position: fixed;
+    bottom: -125px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    width: auto;
+    max-width: none;
+    height: auto;
+    filter: blur(.75px);
+}
+
+.bg img {
+    display: block;
+    width: 1550px;
+    height: auto;
+    max-width: none;
+}
+
+.stick {
+    position: fixed;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.stickfigure {
+    display: block;
+    height: 225px;
+    width: auto;
+}
+
+@keyframes jump {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-75px); }
+}
+
+@media screen and (min-width: 1100px) and (max-width: 1700px) {
+    .hibob {
+        display: block; }
+    .stick .stickfigure {
+        animation: jump 1s ease-in-out infinite; }
+}
+
+@media screen and (min-width: 700px) and (max-width: 1099px) {
+    .hibob {
+        display: none;
+    }
+    .bobsays {
+    display: block;}
+    .hi {
+    display: block;}
+}
+
+@media screen and (max-width: 699px) {
+    .car {display: block;}
+    .stick .stickfigure {transform: rotate(-90deg) scaleY(1.5) scale(90%) skew(-15deg, 20deg); }
+}
+
+.instructions2 {
+    position: fixed;
+    top: 20px;
+    background-color: rgb(230, 230, 101);
+    text-align: center;
+    color: rgb(59, 59, 59);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    z-index: 10;
+    display: none;
+}
+
+@media screen and (max-width: 670px) {
+    .instructions2 {
+        display: block;
+    }
+    .instructions {display: none;}
+}
+
+.mcqueen {
+    z-index: 19;
+    position: fixed;
+    bottom: 87px;
+    right: 140px;
+    width: 325px;
+    height: auto;
+    max-width: none;
+    rotate: 5deg;
+}
+
+.mcqueen:hover {
+    animation: rattle .12s normal infinite;
+    filter: drop-shadow(0 0 3px white) drop-shadow(0 0 8px white);
+}
+
+@keyframes rattle {
+    0% 100% {transform:rotate(0deg);}
+    50% {transform: rotate(-3deg);}
+    75% {transform: rotate(2deg);}
+}
+
+body:has(.mcqueen:active)::after {
+    content: "kachow";
+    position: fixed;
+    inset: 0;
+    background: rgb(202, 0, 0);
+    z-index: 9999;
+    pointer-events: none;display: flex;
+    align-items: center;
+    justify-content: center;
+    color: goldenrod;
+    font-size: 100px;
+}
